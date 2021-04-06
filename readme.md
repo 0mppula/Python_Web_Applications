@@ -4,5 +4,5 @@
 
 -   [ ] 18-1. New Projects (Not included)
 -   [x] 18-2. Short Entries
--   [ ] 18-3. The Dhango API
--   [ ] 18-4. Pizzeria
+-   [ ] 18-3. The Dhango API (Not included)
+-   [x] 18-4. Pizzeria
