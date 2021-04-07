@@ -1,0 +1,23 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	width: min(1200px, 97vw);
+	margin: 0 auto;
+}
+
+.title {
+	text-align: center;
+	color: #1b1b1b;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ascii-format {
+	font-family: Monospace;
+	color: #1b1b1b;
+	font-size: 2rem;
+	text-align: center;
+}
