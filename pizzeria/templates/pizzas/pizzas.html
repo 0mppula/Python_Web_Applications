@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} List {% endblock title %}
+{% block content %}
+    <h3>Here are all the pizzas</h3>
+
+    <ul>
+        {% for pizza in pizzas %}
+            <li><a href="{% url 'pizzas:pizza_page' pizza.name %}">{{ pizza }}</a></li>
+        {% empty %}
+            <li>No pizzas have been added yet.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
