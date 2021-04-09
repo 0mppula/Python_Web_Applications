@@ -1,7 +1,22 @@
-<p>
-    <a href="{% url 'learning_logs:index' %}">Learning Logs</a>
-    <span> - </span>
-    <a href="{% url 'learning_logs:topics' %}">Topics</a>
-</p>
-
-{% block content %}{% endblock content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static './css/styles.css' %}">
+    <title>Pollster {% block title %}{% endblock %}</title>
+</head>
+<body>
+    <p>
+        <a href="{% url 'learning_logs:index' %}">Learning Logs</a>
+        <span> - </span>
+        <a href="{% url 'learning_logs:topics' %}">Topics</a>
+    </p>
+    
+    {% block content %}{% endblock content %}
+    
+</body>
+</html>
