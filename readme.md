@@ -8,5 +8,5 @@
 -   [x] 18-4. Pizzeria
 -   [x] 18-5. Meal Planner
 -   [x] 18-6. Pizzeria Home Page
--   [x] 18-7. Template Documentation (Not included)
+-   [ ] 18-7. Template Documentation (Not included)
 -   [x] 18-8. Pizzeria Pages
