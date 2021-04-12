@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ICON -->
+    <link rel="icon" href="{% static './images/pizza.png' %}">
     <!-- CSS -->
     <link rel="stylesheet" href="{% static './css/styles.css' %}">
     <title>Pizzas {% block title %}{% endblock title %}</title>
@@ -12,15 +14,15 @@
 <body>
     <div class="nav-bar">
         <div class="nav-header">
-            <div class="nav-logo">
-                <a href="{% url 'pizzas:index' %}">
-                    <img src="{% static './images/pizza.png' %}" alt="logo">
-                </a>
-            </div>
 
-            <h1>
+                <div class="nav-logo">
+                    <a href="{% url 'pizzas:index' %}">
+                        <img src="{% static './images/pizza.png' %}" alt="logo">
+                    </a>
+                </div>
+                
                 <a href="{% url 'pizzas:index' %}"><h1>Pizzeria</h1></a> 
-            </h1>
+
         </div>
 
 

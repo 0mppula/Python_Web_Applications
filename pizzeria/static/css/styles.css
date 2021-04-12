@@ -57,6 +57,10 @@ body {
     padding-bottom: 0.125rem;
 }
 
+.nav-title-link {
+    display: inline;
+}
+
 .nav-logo {
 	margin-right: 0.35rem;
 }
