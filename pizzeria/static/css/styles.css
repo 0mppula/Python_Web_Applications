@@ -1,8 +1,27 @@
-/* PIZZERIA */
+/* Navbar font */
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+/* Body font */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300&display=swap');
+
+/* Master styles */
+:root {
+    --mainBlack: #1b1b1b;
+    --mainWhite: #fafafa;
+    --secondaryColor: #225599;
+    --titleLetterSpacing: 0.1rem;
+    --mainBoxShadow: 0px 1px 13px 0px rgba(27, 27, 27, 0.35);
+    --slowTransition: all 0.3s ease;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .container {
@@ -13,6 +32,69 @@
     justify-content: center;
     align-items: center;
 }
+/* EndMaster styles */
+
+/* Navbar styles */
+.nav-bar {
+    font-family: 'Michroma', sans-serif;
+    height: 3.5rem;
+    width: 100%;
+    background: var(--mainWhite);
+    color: var(--mainBlack);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    user-select: none;
+    box-shadow: var(--mainBoxShadow);
+
+}
+
+.nav-header {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.125rem;
+}
+
+.nav-logo {
+	margin-right: 0.35rem;
+}
+
+.nav-header img {
+	padding-top: 0.4rem;
+	height: 40px;
+}
+
+.nav-header h1 {
+    font-size: 2rem;
+    color: var(--mainBlack);
+    letter-spacing: var(--titleLetterSpacing);
+}
+
+.nav-links {
+    width: max(20%, 275px);
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.35rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    list-style: none;
+    transition: var(--slowTransition);
+}
+
+.nav-links li a {
+    color: var(--mainBlack);
+}
+
+.nav-links li a:hover {
+    color: var(--secondaryColor)
+}
+
+.nav-links li a:active {
+    color: var(--mainBlack)
+}
+/* End Navbar styles */
 
 
 .title {

@@ -10,9 +10,33 @@
     <title>Pizzas {% block title %}{% endblock title %}</title>
 </head>
 <body>
-    <p><a href="{% url 'pizzas:index' %}">Home</a>
-    <span> - </span>
-    <a href="{% url 'pizzas:pizza_list' %}">Pizzas</a></p>
-    {% block content %}{% endblock content %}
+    <div class="nav-bar">
+        <div class="nav-header">
+            <div class="nav-logo">
+                <a href="{% url 'pizzas:index' %}">
+                    <img src="{% static './images/pizza.png' %}" alt="logo">
+                </a>
+            </div>
+
+            <h1>
+                <a href="{% url 'pizzas:index' %}"><h1>Pizzeria</h1></a> 
+            </h1>
+        </div>
+
+
+        <ul class="nav-links">
+            <li>
+                <a href="{% url 'pizzas:index' %}">Home</a>
+            </li>
+            <li>
+                <a href="{% url 'pizzas:pizza_list' %}">Pizzas</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        {% block content %}{% endblock content %}
+    </div>
+
 </body>
 </html>
