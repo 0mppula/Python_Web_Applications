@@ -1,10 +1,71 @@
-/* LEARNING LOG */
+/* Font body*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+:root {
+    --mainBlack: #1b1b1b;
+    --mainPurple: #733380;
+    --mainWhite: #fafafa;
+    --titleSpacing: 0.1rem;
+    --mainBoxShadow: 0px 1px 13px 0px rgba(27, 27, 27, 0.35);
+    --slowTransition: all 0.3s ease;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar */
+.nav-bar {
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--mainBlack);
+    background: var(--mainWhite);
+    position: fixed;
+    user-select: none;
+    box-shadow: var(--mainBoxShadow);
+}
+
+.nav-header {
+    width: 75%;
+}
+
+.nav-header h1 {
+    font-size: 2rem;
+    letter-spacing: var(--titleSpacing);
+    text-transform: uppercase;
+    padding-left: 1rem
+}
+
+.nav-links {
+    width: max(400px, 18%);
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.35rem;
+    text-transform: uppercase;
+    list-style: none;
+}
+
+.nav-links li a {
+    transition: var(--slowTransition);
+    color: var(--mainBlack);
+}
+
+.nav-links li a:hover {
+    color: var(--mainPurple);
+}
+/* End Navbar */
+
+/* Content */
 .container {
     width: min(1140px, 100%);
     height: 90vh;
@@ -13,3 +74,4 @@
     justify-content: center;
     align-items: center;
 }
+/* End Content */

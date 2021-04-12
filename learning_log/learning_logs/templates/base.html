@@ -10,11 +10,24 @@
     <title>Learning Log {% block title %}{% endblock %}</title>
 </head>
 <body>
-    <p>
-        <a href="{% url 'learning_logs:index' %}">Learning Logs</a>
-        <span> - </span>
-        <a href="{% url 'learning_logs:topics' %}">Topics</a>
-    </p>
+    
+    <!-- Nav bar -->
+    <div class="nav-bar">
+        <div class="nav-header">
+            <h1>Learning Log</h1>
+        </div>
+
+        <ul class="nav-links">
+            <li>
+                <a href="{% url 'learning_logs:index' %}">Learning Logs</a>
+            </li>
+            <li>
+                <a href="{% url 'learning_logs:topics' %}">Topics</a>
+            </li>
+        </ul>
+
+    </div>
+    <!-- End Nav bar -->
     
     <div class="container">
         {% block content %}{% endblock content %}
