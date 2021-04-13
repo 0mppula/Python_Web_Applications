@@ -3,10 +3,14 @@
 {% block title %} Topics {% endblock title %}
 {% block content %}
 
-    <p>Topics</p>
+    <div class="content-card">
 
-    <ul>
-        {% for topic in topics %}
+        <div class="title">
+            <h1>Topics</h1>
+        </div>
+        
+        <ul class="topics-list">
+            {% for topic in topics %}
             <li>
                 <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
             </li>
@@ -15,6 +19,7 @@
             {% endfor %}
         </ul>
         
-        <a href="{% url 'learning_logs:new_topic' %}">Add a new topic:</a>
+        <a class="add-topic-btn btn" type="button" href="{% url 'learning_logs:new_topic' %}">Add a new topic:</a>
+    </div>
         
 {% endblock content %}

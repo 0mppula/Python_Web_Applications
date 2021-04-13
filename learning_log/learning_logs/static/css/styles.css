@@ -7,7 +7,9 @@
     --mainWhite: #fafafa;
     --titleSpacing: 0.1rem;
     --mainBoxShadow: 0px 1px 13px 0px rgba(27, 27, 27, 0.35);
+    --mainBorderRadius: 5px;
     --slowTransition: all 0.3s ease;
+    --fastTransition: all 0.2s ease;
 }
 
 * {
@@ -73,5 +75,75 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.content-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: min(550px, 97%);
+    color: var(--mainWhite);
+    box-shadow: var(--mainBoxShadow);
+    border-radius: var(--mainBorderRadius);
+    padding: 1.75rem 1.5rem;
+}
+
+.btn {
+    text-transform: capitalize;
+    font-size: 1rem;
+    padding: 0.4rem 0.65rem;
+    background: var(--mainPurple);
+    color: var(--mainWhite);
+    border-radius: var(--mainBorderRadius);
+    transition: var(--fastTransition);
+    filter: opacity(0.85);
+    cursor: pointer;
+}
+
+.title {
+    width: 100%;
+    padding-bottom: 2.25rem;
+}
+
+.title h1 {
+    font-size: 2rem;
+    color: var(--mainBlack);
+    letter-spacing: var(--titleSpacing);
+}
+
+.topics-list {
+    width: calc(100% - 0.75rem);
+    list-style: none;
+    margin-bottom: 1.5rem;
+    margin-left: 0.75rem;
+}
+
+.topics-list li {
+    margin-bottom: 0.2rem;
+
+
+}
+
+.topics-list li a {
+    font-size: 1.4rem;
+    color: var(--mainBlack);
+    transition: var(--slowTransition);
+}
+
+.topics-list li a:hover {
+    color: var(--mainPurple);
+    padding-left: 0.35rem;
+}
+
+
+.btn:hover {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+}
+
+.btn:active {
+    transform: scale(1);
+    filter: brightness(1);
 }
 /* End Content */
