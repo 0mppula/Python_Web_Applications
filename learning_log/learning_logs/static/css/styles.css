@@ -116,24 +116,27 @@ body {
     width: calc(100% - 0.75rem);
     list-style: none;
     margin-bottom: 1.5rem;
-    margin-left: 0.75rem;
+    margin-left: 0.5rem;
 }
 
 .topics-list li {
     margin-bottom: 0.2rem;
-
-
 }
 
 .topics-list li a {
+    display: inline-block;
+    width: 100%;
     font-size: 1.4rem;
     color: var(--mainBlack);
     transition: var(--slowTransition);
+    padding-left: 0.35rem;
 }
 
 .topics-list li a:hover {
     color: var(--mainPurple);
-    padding-left: 0.35rem;
+    background: rgba(27, 27, 27, 0.1);
+    border-radius: var(--mainBorderRadius);
+    padding-left: 0.75rem;
 }
 
 
