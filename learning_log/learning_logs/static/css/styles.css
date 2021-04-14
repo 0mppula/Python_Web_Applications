@@ -90,6 +90,7 @@ body {
 }
 
 .btn {
+    display: inline-block;
     text-transform: capitalize;
     font-size: 1rem;
     padding: 0.4rem 0.65rem;
@@ -103,6 +104,12 @@ body {
     cursor: pointer;
 }
 
+.edit-btn {
+    font-size: 0.85rem;
+    filter: opacity(0.6);
+    padding: 0.3rem 0.5rem;
+}
+
 .btn-container {
     display: flex;
     justify-content: center;
@@ -112,6 +119,12 @@ body {
 .title {
     width: 100%;
     padding-bottom: 2.25rem;
+}
+
+.title h1 {
+    font-size: 2rem;
+    color: var(--mainBlack);
+    letter-spacing: var(--titleSpacing);
 }
 
 .title h1 {
@@ -132,6 +145,7 @@ body {
     font-size: 1.25rem;
     color: var(--mainBlack);
     margin-bottom: 0.75rem;
+    text-align: center;
 }
 
 .topics-list {
