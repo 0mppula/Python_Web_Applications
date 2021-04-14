@@ -3,11 +3,13 @@
 {% block title %}Add New Topic{% endblock title %}
 {% block content %}
 
-    <p>Add a new topic:</p>
-    <form action="{% url 'learning_logs:new_topic' %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button name="submit">add topic</button>
-    </form>
+    <div class="content-card">
+        <p>Add a new topic:</p>
+        <form action="{% url 'learning_logs:new_topic' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="add-topic-btn btn" name="submit">add topic</button>
+        </form>
+    </div>
 
 {% endblock content %}

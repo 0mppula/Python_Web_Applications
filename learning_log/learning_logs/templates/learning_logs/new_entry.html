@@ -2,14 +2,24 @@
 
 {% block title %}New Entry{% endblock title %}
 {% block content %}
+    <div class="content-card">
+        
+        <div class="title link">
+            <a href="{% url 'learning_logs:topic' topic.id %}"><h1>{{ topic }}</h1></a>
+        </div>
+        
+        <div class="secondary-title">
+            <h3>Add a new entry:</h3>
+        </div>
 
-    <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></p>
+        <form action="{% url 'learning_logs:new_entry' topic.id %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
 
-    <p>Add a new entry:</p>
-    <form action="{% url 'learning_logs:new_entry' topic.id %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button name="submit">add entry</button>
-    </form>
+            <div class="btn-container">
+                <button class="add-entry-btn btn" name="submit">add entry</button>
+            </div>
+        </form>
+    </div>
 
 {% endblock content %}
