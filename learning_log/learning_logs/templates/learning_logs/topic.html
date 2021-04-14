@@ -18,6 +18,7 @@
             <li>
                 <p class="timestamp">{{  entry.date_added|date:'M d, Y H:i'  }}</p>
                 <p class="entry-item">{{  entry.text  }}</p>
+                <a href="{% url 'learning_logs:edit_entry' entry.id %}" class="edit-btn btn">edit entry</a>
             </li>
             {% empty %}
             <li>
@@ -26,7 +27,7 @@
             {% endfor %}
         </ul>
 
-            <a class="add-entry-btn btn" type="button" href="{% url 'learning_logs:new_entry' topic.id %}">Add a new entry:</a>
+            <a class="add-btn btn" type="button" href="{% url 'learning_logs:new_entry' topic.id %}">Add a new entry:</a>
     </div>
         
         {% endblock %}

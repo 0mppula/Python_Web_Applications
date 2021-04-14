@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit {{ entry }}{% endblock title %}
+{% block content %}
+
+    <div class="content-card">
+
+        <div class="title link">
+            <a href="{%  url 'learning_logs:topic' topic.id %}"><h1>{{ topic }}</h1></a>
+        </div>
+
+        <div class="secondary-title">
+            <h3>Edit entry:</h3>
+        </div>
+
+        <form action="{% url 'learning_logs:edit_entry' entry.id %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <div class="btn-container">
+                <button class="edit-btn btn" name="submit">save changes</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock content %}
