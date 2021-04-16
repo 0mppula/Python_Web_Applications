@@ -7,20 +7,31 @@
         <h1>Hottest Blogs</h1>
     </div>
     
-    {% for blog_post in blog_posts %}
-    <div class="blog-item-container">
-        <div class="blog-item-header">
-            <h3>{{ blog_post }}</h3>
-            <h4>{{ blog_post.date_added }}</h4>
-        </div>
+    <div class="blog-items-container">
+        {% for blog_post in blog_posts %}
+        <div class="blog-item-container">
 
-        <div class="blog-item-text">
-            {{ blog_post.text }}
+            <div class="blog-item-header">
+                <h3>{{ blog_post }}</h3>
+                <div class="blog-header-left">
+                    <p class="blog-timestamp">{{ blog_post.date_added }}</p>
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+            </div>
+            
+            <div class="blog-item-text">
+                {{ blog_post.text }}
+            </div>
+            
         </div>
+        
+        {% empty %}
+            <h3>No posts have been posted yet.</h3>
+        {% endfor %}
 
     </div>
-    {% empty %}
-        <h3>No posts have been posted yet.</h3>
-    {% endfor %}
+    <div class="blog-items-footer">
+        <button class="btn">Create post</button>
+    </div>
 
 {% endblock content %}
