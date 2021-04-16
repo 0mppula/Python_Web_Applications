@@ -1,14 +1,31 @@
+/* Title font */
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+/* Body font */
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@100;200;300;400&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --titleFont: 'Yeseva One', cursive;
+    --mainFont: 'Bitter', serif;
+    --mainBorderBottom: solid 1px rgba(27, 27, 27, 0.25);
+}
+
+body {
+    font-family: var(--mainFont)
+}
+
+/* Form styles */
 form {
     margin: 0 auto;
 }
 
 form p {
+    font-family: var(--titleFont);
     font-size: 1.2rem;
     font-weight: 600;
     display: flex;
@@ -17,19 +34,24 @@ form p {
 }
 
 input[type="text" i] {
+    font-family: var(--mainFont);
     font-size: 1.2rem;
     width: 80%;
-    margin-bottom: 0.5rem;
 }
 
 textarea {
     font-size: 1.2rem;
+    font-family: var(--mainFont);
+    margin-top: 1rem;
 }
+/* End Form styles */
 
+/* Navbar styles */
 .navbar {
+    font-family: var(--titleFont);
     background: #ababab;
     padding: 0.35rem 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .nav-links {
@@ -49,6 +71,7 @@ textarea {
 .nav-links li:hover a {
     color:aquamarine;
 }
+/* End Navbar styles */
 
 .container {
     display: flex;
@@ -58,18 +81,20 @@ textarea {
     margin: 0 auto;
 }
 
-.tilte-container {
+.title-container {
+    font-family: var(--titleFont);
     color: #1b1b1b;
     font-size: 1.75rem;
     text-transform: capitalize;
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
 }
 
-.tilte-container-small {
+.title-container-small {
+    font-family: var(--titleFont);
     color: #1b1b1b;
     font-size: 1.5rem;
     text-transform: capitalize;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 }
 
 .blog-items-container {
@@ -82,32 +107,45 @@ textarea {
 }
 
 .blog-item-container {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
 }
 
 .blog-item-header {
+    font-family: var(--titleFont);
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    text-transform: capitalize;
     font-size: 1.55rem;
     margin-bottom: 0.85rem;
     padding-bottom: 0.35rem;
-    text-transform: capitalize;
-    border-bottom: solid 1px rgba(27, 27, 27, 0.25);
+    border-bottom: var(--mainBorderBottom);
+}
+
+.blog-header-right {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .blog-header-left {
-    color: #1b1b1b;
+    width: 10%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
 }
 
 .blog-header-left i {
-    font-size: 1rem;
-    padding-left: 0.35rem;
+    font-size: 1.1rem;
+    padding: 0 0 0.1rem 0.5rem;
     filter: opacity(0.75);
     transition: 0.2s ease;
     cursor: pointer;
+}
+
+.blog-header-left a i {
+    color: #1b1b1b;
 }
 
 .blog-header-left i:hover {
@@ -116,8 +154,9 @@ textarea {
 }
 
 .blog-timestamp {
-    font-size: 1rem;
-    font-weight: 600;
+    font-family: var(--mainFont);
+    font-size: 0.9rem;
+    font-weight: 400;
 }
 
 .blog-item-text {
@@ -133,15 +172,17 @@ textarea {
 
 .btn {
     padding: 0.25rem 1rem;
-    font-size: 1.1rem;
     border: none;
     border-radius: 3px;
-    color: #1b1b1b;
     background: aquamarine;
-    cursor: pointer;
-    filter: opacity(0.75);
-    transition: 0.2s ease;
+    color: #1b1b1b;
+    font-family: var(--mainFont);
+    font-size: 1.1rem;
+    text-transform: capitalize;
     text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+    filter: opacity(0.75);
 }
 
 .btn:hover {

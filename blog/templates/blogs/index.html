@@ -3,19 +3,24 @@
 {% block title %}Home{% endblock title %}
 {% block content %}
 
-    <div class="tilte-container">
-        <h1>Hottest Blogs</h1>
+    <div class="title-container">
+        <h1>The Hottest Blogs</h1>
     </div>
     
     <div class="blog-items-container">
         {% for blog_post in blog_posts %}
-        <div class="blog-item-container">
 
+        <div class="blog-item-container">
             <div class="blog-item-header">
-                <h3>{{ blog_post }}</h3>
-                <div class="blog-header-left">
+
+                <div class="blog-header-right">
+                    <h3>{{ blog_post }}</h3>
                     <p class="blog-timestamp">{{ blog_post.date_added }}</p>
-                    <i class="fas fa-pencil-alt"></i>
+                </div>
+
+                <div class="blog-header-left">
+                    <a href="{% url 'blogs:index' %}"><i class="fas fa-pencil-alt edit"></i></a>
+                    <a href="{% url 'blogs:index' %}"><i class="fas fa-trash delete"></i></a>
                 </div>
             </div>
             
