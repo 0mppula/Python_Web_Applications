@@ -5,11 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static './css/styles.css' %}">
     <title>Blog {% block title %}{% endblock title %}</title>
 </head>
 <body>
-    <h3><a href="{% url 'blogs:index' %}">Home</a></h3>
+    <div class="navbar">
+        <ul class="nav-links">
+            <li>
+                <a href="{% url 'blogs:index' %}">Home</a>
+            </li>
+        </ul>
+    </div>
 
-    {% block content %}{% endblock content %}
+    <div class="container">
+        {% block content %}{% endblock content %}
+    </div>
 </body>
 </html>

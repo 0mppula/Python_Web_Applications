@@ -2,5 +2,25 @@
 
 {% block title %}Home{% endblock title %}
 {% block content %}
-    <h1>Hello World!</h1>
+
+    <div class="tilte-container">
+        <h1>Hottest Blogs</h1>
+    </div>
+    
+    {% for blog_post in blog_posts %}
+    <div class="blog-item-container">
+        <div class="blog-item-header">
+            <h3>{{ blog_post }}</h3>
+            <h4>{{ blog_post.date_added }}</h4>
+        </div>
+
+        <div class="blog-item-text">
+            {{ blog_post.text }}
+        </div>
+
+    </div>
+    {% empty %}
+        <h3>No posts have been posted yet.</h3>
+    {% endfor %}
+
 {% endblock content %}

@@ -1,6 +1,8 @@
+""" Models for blogs. """
+
 from django.db import models
 
-class Blog(models.Model):
+class BlogPost(models.Model):
     """ A blog that contains a title, text and the date of entry. """
     title = models.CharField(max_length=50)
     text = models.TextField(max_length=300)
