@@ -4,6 +4,28 @@
     box-sizing: border-box;
 }
 
+form {
+    margin: 0 auto;
+}
+
+form p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+input[type="text" i] {
+    font-size: 1.2rem;
+    width: 80%;
+    margin-bottom: 0.5rem;
+}
+
+textarea {
+    font-size: 1.2rem;
+}
+
 .navbar {
     background: #ababab;
     padding: 0.35rem 1rem;
@@ -39,6 +61,13 @@
 .tilte-container {
     color: #1b1b1b;
     font-size: 1.75rem;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+
+.tilte-container-small {
+    color: #1b1b1b;
+    font-size: 1.5rem;
     text-transform: capitalize;
     margin-bottom: 2rem;
 }
@@ -112,6 +141,7 @@
     cursor: pointer;
     filter: opacity(0.75);
     transition: 0.2s ease;
+    text-decoration: none;
 }
 
 .btn:hover {
