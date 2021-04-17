@@ -19,8 +19,8 @@
                 </div>
 
                 <div class="blog-header-left">
-                    <a href="{% url 'blogs:index' %}"><i class="fas fa-pencil-alt edit"></i></a>
-                    <a href="{% url 'blogs:index' %}"><i class="fas fa-trash delete"></i></a>
+                    <a href="{% url 'blogs:edit_blog' blog_post.id %}"><i class="fas fa-pencil-alt edit"></i></a>
+                    <a href="{% url 'blogs:delete_blog' blog_post.id %}"><i class="fas fa-trash delete"></i></a>
                 </div>
             </div>
             

@@ -25,3 +25,27 @@ def new_blog(request):
     
     context = {'form': form}
     return render(request, 'blogs/new_blog.html', context)
+
+def edit_blog(request, blog_id):
+    """ Edit a particular blogs title and text. """
+    blog = BlogPost.objects.get(id=blog_id)
+
+    if request.method != 'POST':
+        # Initial request; pre-fill form with current blog info
+        form = BlogPostForm(instance=blog)
+    else:
+        # POST data submitted; process data
+        form = BlogPostForm(instance=blog, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('blogs:index'))
+    
+    context = {'blog': blog, 'form': form}
+    return render(request, 'blogs/edit_blog.html', context)
+
+def delete_blog(request, blog_id):
+    """ Deletes selected blog from website. """
+    blog = BlogPost.objects.get(id=blog_id)
+    blog.delete()
+
+    return HttpResponseRedirect(reverse('blogs:index'))
