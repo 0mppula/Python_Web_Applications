@@ -3,6 +3,7 @@
 /* Body font */
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@100;200;300;400&display=swap');
 
+/* Master styles */
 * {
     padding: 0;
     margin: 0;
@@ -18,6 +19,7 @@
 body {
     font-family: var(--mainFont)
 }
+/* End Master styles */
 
 /* Form styles */
 form {
@@ -73,20 +75,23 @@ textarea {
 }
 /* End Navbar styles */
 
+/* Container styles */
 .container {
     display: flex;
     flex-direction: column;
-    width: min(650px, 97vw);
+    width: min(650px, 95vw);
     align-items: center;
     margin: 0 auto;
 }
+/* End Container styles */
 
+/* Title Styles */
 .title-container {
     font-family: var(--titleFont);
     color: #1b1b1b;
     font-size: 1.75rem;
     text-transform: capitalize;
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
 }
 
 .title-container-small {
@@ -96,7 +101,9 @@ textarea {
     text-transform: capitalize;
     margin-bottom: 5rem;
 }
+/* End Title Styles */
 
+/* Blog Styles */
 .blog-items-container {
     display: flex;
     flex-direction: column;
@@ -169,7 +176,9 @@ textarea {
     display: flex;
     justify-content: center;
 }
+/* End Blog Styles */
 
+/* Button Styles */
 .btn {
     padding: 0.25rem 1rem;
     border: none;
@@ -188,3 +197,89 @@ textarea {
 .btn:hover {
     filter: opacity(1);
 }
+/* End Button Styles */
+
+/* Media Queries */
+@media screen and (max-width: 550px) {
+    .title-container {
+        font-size: 1.35rem;
+        margin-bottom: 4rem;
+    }
+    .title-container-small {
+        font-size: 1.35rem;
+        margin-bottom: 4rem;
+    }
+    .blog-item-header {
+        font-size: 1.25rem;
+    }
+    .blog-timestamp {
+        font-size: 0.75rem;
+    }
+    .blog-header-left i {
+        font-size: 1rem;
+        padding: 0 0 0.1rem 0.5rem;
+        filter: opacity(0.75);
+        transition: 0.2s ease;
+        cursor: pointer;
+    }
+    .blog-item-text {
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    form {
+        margin: 0 auto;
+    }
+    
+    form p {
+        font-family: var(--titleFont);
+        font-size: 1.2rem;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    form p label {
+        margin-bottom: 0.25rem;
+    }
+    
+    input[type="text" i] {
+        font-family: var(--mainFont);
+        font-size: 1.2rem;
+        width: 95vw;
+    }
+    
+    textarea {
+        font-size: 1.2rem;
+        font-family: var(--mainFont);
+        margin-top: 1rem;
+        box-sizing: border-box;
+        max-width: 95vw;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .title-container {
+        font-size: 1.23rem;
+    }
+    .title-container-small {
+        font-size: 1.23rem;
+    }
+    .blog-header-right {
+        font-family: var(--titleFont);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .blog-header-left {
+        min-height: 45px;
+        align-items: center
+    }
+    .blog-timestamp {
+        font-size: 0.75rem;
+        margin-top: 0.25rem;
+    }
+}
+/* End Media Queries */

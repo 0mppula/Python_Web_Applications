@@ -9,5 +9,5 @@ class BlogPost(forms.ModelForm):
         fields = ['title', 'text']
         labels = {'title': 'Blog Title:', 'text': ''}
         widgets = {'text': forms.Textarea(attrs={'placeholder': 'blog content...', 
-        'cols': 50}), }
+        'cols': 50,}), }
         
