@@ -4,12 +4,12 @@
 {% block content %}
 
 <div class="title-container-small">
-    <h1>Editing {{ blog.title }}</h1>
+    <h1>Editing {{ blog_post.title }}</h1>
 </div>
 
 <div class="blog-items-container">
 
-    <form class="form" action="{% url 'blogs:edit_blog' blog.id %}" method="post">
+    <form class="form" action="{% url 'blogs:edit_blog' blog_post.id %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
 
