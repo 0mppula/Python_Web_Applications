@@ -9,7 +9,10 @@
         <form action="{% url 'learning_logs:new_topic' %}" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button class="add-topic-btn btn" name="submit">add topic</button>
+
+            <div class="btn-container">
+                <button class="add-topic-btn btn" name="submit">add topic</button>
+            </div>
         </form>
     </div>
 

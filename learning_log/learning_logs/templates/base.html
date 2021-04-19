@@ -24,6 +24,15 @@
             <li>
                 <a href="{% url 'learning_logs:topics' %}">Topics</a>
             </li>
+            {% if user.is_authenticated %}
+                <li>
+                    <p>Hello, {{ user.username }}</p>
+                </li>
+            {% else %}
+            <li>
+                <a href="{% url 'users:login' %}">Log In</a>
+            </li>
+            {% endif %}
         </ul>
 
     </div>
