@@ -63,7 +63,7 @@ form p {
 }
 
 .nav-header {
-    width: 75%;
+    width: 60%
 }
 
 .nav-header h1 {
@@ -74,10 +74,10 @@ form p {
 }
 
 .nav-links {
-    width: max(400px, 18%);
+    width: max(485px, 27%);
     display: flex;
     justify-content: space-around;
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     text-transform: uppercase;
     list-style: none;
 }

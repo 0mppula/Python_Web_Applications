@@ -26,7 +26,7 @@
             </li>
             {% if user.is_authenticated %}
                 <li>
-                    <p>Hello, {{ user.username }}</p>
+                    <a class="greetings">Hello, {{ user.username }}</a>
                 </li>
             {% else %}
             <li>
