@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+{% block content %}
+
+    {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    <div class="content-card">
+
+        <form action="{% url 'users:login' %}" method="post" class="login-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            
+            <div class="btn-container">
+                <button class="login-btn btn" name="submit">log in</button>
+            </div>
+            <input type="hidden" name="next" value="{% url 'learning_logs:index' %}">
+        </form>
+    </div>
+        
+{% endblock content %}
