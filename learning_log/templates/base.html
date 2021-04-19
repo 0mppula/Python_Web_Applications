@@ -29,9 +29,9 @@
                     <a class="greetings">Hello, {{ user.username }}</a>
                 </li>
             {% else %}
-            <li>
-                <a href="{% url 'users:login' %}">Log In</a>
-            </li>
+                <li>
+                    <a href="{% url 'users:login' %}">Log In</a>
+                </li>
             {% endif %}
         </ul>
 
