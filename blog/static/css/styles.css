@@ -82,7 +82,8 @@ textarea {
     transition: 0.2s ease;
 }
 
-.nav-links li:hover a {
+.nav-links li:hover a,
+.nav-logins li:hover a {
     color:aquamarine;
 }
 
