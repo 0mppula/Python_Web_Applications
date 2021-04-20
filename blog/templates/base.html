@@ -18,6 +18,18 @@
                 <a href="{% url 'blogs:index' %}">Home</a>
             </li>
         </ul>
+
+        <ul class="nav-logins">
+            {% if user.is_authenticated %}
+                <li>
+                    <a class="greetings">Hello, {{ user.username }}</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'users:login' %}">log in</a>
+                </li>
+            {% endif %}
+        </ul>
     </div>
 
     <div class="container">

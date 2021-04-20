@@ -98,6 +98,10 @@ form p {
 .nav-links li a:hover {
     color: var(--mainPurple);
 }
+
+.nav-links .greetings {
+    color: aquamarine;
+}
 /* End Navbar */
 
 /* Button Styles */

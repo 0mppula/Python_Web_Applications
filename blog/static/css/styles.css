@@ -29,6 +29,7 @@ form {
 form p {
     font-family: var(--titleFont);
     font-size: 1.2rem;
+    margin-bottom: 1rem;
     font-weight: 600;
     display: flex;
     justify-content: space-between;
@@ -36,6 +37,12 @@ form p {
 }
 
 input[type="text" i] {
+    font-family: var(--mainFont);
+    font-size: 1.2rem;
+    width: 80%;
+}
+
+input[type="password" i] {
     font-family: var(--mainFont);
     font-size: 1.2rem;
     width: 80%;
@@ -54,15 +61,20 @@ textarea {
     background: #ababab;
     padding: 0.35rem 1rem;
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
-.nav-links {
-    background: #ababab;
+.nav-links,
+.nav-logins {
     padding: 0.35rem 1rem;
     list-style: none;
 }
 
-.nav-links li a {
+.nav-links li a,
+.nav-logins li a {
     text-decoration: none;
     font-size: 1.3rem;
     font-weight: 600;
@@ -73,14 +85,20 @@ textarea {
 .nav-links li:hover a {
     color:aquamarine;
 }
+
+.nav-logins .greetings {
+    color: aquamarine;
+}
 /* End Navbar styles */
 
 /* Container styles */
 .container {
     display: flex;
     flex-direction: column;
+    min-height: 500px;
     width: min(650px, 95vw);
     align-items: center;
+    justify-content: center;
     margin: 0 auto;
 }
 /* End Container styles */
