@@ -73,6 +73,12 @@ textarea {
     list-style: none;
 }
 
+.nav-logins {
+    display: flex;
+    justify-content: space-around;
+    width: min(395px, 60%);
+}
+
 .nav-links li a,
 .nav-logins li a {
     text-decoration: none;
