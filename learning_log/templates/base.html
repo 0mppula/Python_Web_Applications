@@ -26,7 +26,7 @@
             </li>
             {% if user.is_authenticated %}
                 <li>
-                    <a class="greetings">Hello, {{ user.username }}</a>
+                    <a class="greetings">Hello, {{ user.username }}.</a>
                 </li>
                 <li>
                     <a href="{% url 'users:logout' %}">log out</a>
@@ -34,6 +34,9 @@
             {% else %}
                 <li>
                     <a href="{% url 'users:login' %}">log in</a>
+                </li>
+                <li>
+                    <a href="{% url 'users:register' %}">register</a>
                 </li>
             {% endif %}
         </ul>
