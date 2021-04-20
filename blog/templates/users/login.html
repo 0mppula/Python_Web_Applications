@@ -13,11 +13,11 @@
             {% csrf_token %}
             {{ form.as_p }}
 
-            <div class="button-container">
+            <div class="btn-container">
                 <button class="login-btn btn">login</button>
             </div>
 
-            <input type="hidden" name="next" value="{% url 'blogs:index' %}">
+            <input type="hidden" name="next" value="{% url 'users:login' %}">
         </form>
     </div>
 

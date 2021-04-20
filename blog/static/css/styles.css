@@ -26,26 +26,30 @@ form {
     margin: 0 auto;
 }
 
+form label {
+    margin-bottom: 0.35rem;
+}
+
 form p {
     font-family: var(--titleFont);
     font-size: 1.2rem;
     margin-bottom: 1rem;
     font-weight: 600;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    flex-direction: column;
+    width: 300px;
 }
 
 input[type="text" i] {
     font-family: var(--mainFont);
     font-size: 1.2rem;
-    width: 80%;
+    min-width: 300px;
 }
 
 input[type="password" i] {
     font-family: var(--mainFont);
     font-size: 1.2rem;
-    width: 80%;
+    min-width: 101%;
 }
 
 textarea {
@@ -204,6 +208,12 @@ textarea {
 /* End Blog Styles */
 
 /* Button Styles */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn {
     padding: 0.25rem 1rem;
     border: none;
