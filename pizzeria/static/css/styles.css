@@ -111,7 +111,7 @@ body {
     display: flex;
     flex-direction: column;
     box-shadow: var(--mainBoxShadow);
-    min-height: 265px;
+    min-height: 175px;
     width: min(450px, 97vw);
     padding: 1.5rem 1rem;
     border-radius: var(--mainBorderRadius);
@@ -125,6 +125,7 @@ body {
 .list-items {
     margin: 0 0 0.15rem 0.5rem;
     list-style: none;
+    min-height: 150px;
 }
 
 .list-items li:hover a {
