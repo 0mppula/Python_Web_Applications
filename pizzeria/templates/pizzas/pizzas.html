@@ -3,14 +3,22 @@
 {% block title %} List {% endblock title %}
 {% block content %}
 
-    <h3>Here are all the pizzas</h3>
-
-    <ul>
-        {% for pizza in pizzas %}
-            <li><a href="{% url 'pizzas:pizza_page' pizza.name %}">{{ pizza }}</a></li>
-        {% empty %}
-            <li>No pizzas have been added yet.</li>
-        {% endfor %}
-    </ul>
+    <div class="list-container">
+        <div class="list-title">
+            <h1>Here are all the pizzas</h1>
+        </div>
+        
+        <ul class="list-items">
+            {% for pizza in pizzas %}
+            <li class="list-item">
+                <a href="{% url 'pizzas:pizza_page' pizza.name %}">{{ pizza }}</a>
+            </li>
+            {% empty %}
+            <li class="list-item">
+                <p>No pizzas have been added yet.</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 
 {% endblock content %}

@@ -10,7 +10,9 @@
     --secondaryColor: #225599;
     --titleLetterSpacing: 0.1rem;
     --mainBoxShadow: 0px 1px 13px 0px rgba(27, 27, 27, 0.35);
+    --mainBorderRadius: 4px;
     --slowTransition: all 0.3s ease;
+    --fastTransition: all 0.2s ease;
 }
 
 * {
@@ -84,7 +86,7 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     list-style: none;
-    transition: var(--slowTransition);
+    transition: var(--fastTransition);
 }
 
 .nav-links li a {
@@ -100,7 +102,46 @@ body {
 }
 /* End Navbar styles */
 
+/* List styles */
+.list-container {
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--mainBoxShadow);
+    min-height: 265px;
+    width: min(450px, 97vw);
+    padding: 1.5rem 1rem;
+    border-radius: var(--mainBorderRadius);
+}
 
+.list-title h1{
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.list-items {
+    margin: 0 0 0.15rem 0.5rem;
+    list-style: none;
+}
+
+.list-items li:hover a {
+    color: var(--secondaryColor);
+    background: rgba(27, 27, 27, 0.05);
+    border-radius: var(--mainBorderRadius);
+}
+
+.list-item a {
+    padding: 0.05rem 0.35rem;
+}
+
+.list-item,
+.list-item a {
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: var(--mainBlack);
+    display: block;
+    transition: var(--slowTransition);
+}
+/* End List styles */
 .title {
 	text-align: center;
 	color: #1b1b1b;

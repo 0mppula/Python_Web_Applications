@@ -2,17 +2,22 @@
 
 {% block title %} {{ pizza }} {% endblock title %}
 {% block content %}
-    <h3>Toppings in {{ pizza }}:</h3>
-    <ul>
-        {% for topping in toppings %}
-            <li>
-                {{ topping }}
-            </li>
-        {% empty %}
-            <li>
-                No toppings availabe.
-            </li>
-        {% endfor %}
-    </ul>
+
+    <div class="list-container">
+        <div class="list-title">
+            <h1>Toppings in {{ pizza }}:</h1>
+        </div>
+        <ul class="list-items">
+            {% for topping in toppings %}
+                <li class="list-item">
+                    <p>{{ topping }}</p>
+                </li>
+            {% empty %}
+                <li class="list-item">
+                   <p>No toppings availabe.</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
     
 {% endblock content %}
