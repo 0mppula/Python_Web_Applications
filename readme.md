@@ -14,4 +14,4 @@
 ### Chapter 19 - User Accounts
 
 -   [x] 19-1. Blog
--   [ ] 19-2. Blog Accounts
+-   [x] 19-2. Blog Accounts
