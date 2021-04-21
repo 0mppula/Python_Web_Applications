@@ -36,17 +36,20 @@ form {
 
 input[type="text" i],
 input[type="password" i] {
-    width: 40%;
+    font-size: 1.1rem;
+    min-width: 300px;
 }
 
 label {
-    margin-right: 0.35rem;
+    margin-bottom: 0.15rem;
 }
 
 form p {
+    font-weight: 600;
     font-size: 1.1rem;
     margin-bottom: 1rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     width: 100%;
 }
