@@ -125,3 +125,6 @@ STATIC_URL = 'learning_log/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# My settings
+LOGIN_URL = '/users/login/'

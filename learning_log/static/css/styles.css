@@ -30,10 +30,6 @@ form {
     margin-top: 1rem;
 }
 
-.login-form {
-    width: 100%;
-}
-
 input[type="text" i],
 input[type="password" i] {
     font-size: 1.1rem;
