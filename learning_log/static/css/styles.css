@@ -49,6 +49,10 @@ form p {
     justify-content: center;
     width: 100%;
 }
+
+.login-form {
+    max-width: 300px;
+}
 /* End Form Styles */
 
 /* Navbar */
