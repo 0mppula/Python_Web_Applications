@@ -9,7 +9,7 @@
 
 <div class="blog-items-container">
 
-    <form class="form" action="{% url 'blogs:edit_blog' blog_post.id %}" method="post">
+    <form class="blog-form" action="{% url 'blogs:edit_blog' blog_post.id %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
 

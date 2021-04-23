@@ -26,6 +26,18 @@ form {
     margin: 0 auto;
 }
 
+.login-form {
+    width: min(300px, 95vw)
+}
+
+.blog-form {
+    width: min(600px, 95vw)
+}
+
+.blog-form p{
+    width: 100%;
+}
+
 form label {
     margin-bottom: 0.35rem;
 }
@@ -43,7 +55,7 @@ form p {
 input[type="text" i] {
     font-family: var(--mainFont);
     font-size: 1.2rem;
-    min-width: 300px;
+    width: 100%;
 }
 
 input[type="password" i] {
@@ -107,7 +119,7 @@ textarea {
     display: flex;
     flex-direction: column;
     min-height: 500px;
-    width: min(650px, 95vw);
+    width: min(750px, 95vw);
     align-items: center;
     justify-content: center;
     margin: 0 auto;
@@ -253,7 +265,7 @@ textarea {
     }
     input[type="text" i] {
         font-size: 1.1rem;
-        width: 95vw;
+        width: 100% !important;
     }
     textarea {
         font-size: 1.1rem;
