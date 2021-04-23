@@ -10,6 +10,10 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse('blogs:index'))
 
+def login_view(request):
+    """ Logout user. """
+    return HttpResponseRedirect(reverse('blogs:index'))
+
 def register(request):
     """ Register a new user. """
     if request.method != 'POST':

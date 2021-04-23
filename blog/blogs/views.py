@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.urls import reverse
 
 from .models import BlogPost
@@ -29,6 +29,8 @@ def new_blog(request):
 def edit_blog(request, blog_id):
     """ Edit a particular blogs title and text. """
     blog_post = BlogPost.objects.get(id=blog_id)
+    if blog_post.owner != request.user:
+        return HttpResponseRedirect(reverse('blogs:index'))
 
     if request.method != 'POST':
         # Initial request; pre-fill form with current blog info
