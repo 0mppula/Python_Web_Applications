@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth import login, logout, authenticate
 
-from .models import UserCreateForm 
+from .forms import UserCreateForm 
 
 
 def logout_view(request):
