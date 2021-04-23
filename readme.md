@@ -15,6 +15,6 @@
 
 -   [x] 19-1. Blog
 -   [x] 19-2. Blog Accounts
--   [ ] 19-3. Refactoring
--   [ ] 19-4. Protecting new_entry
--   [ ] 19-5. Protected Blog
+-   [x] 19-3. Refactoring
+-   [x] 19-4. Protecting new_entry
+-   [x] 19-5. Protected Blog
