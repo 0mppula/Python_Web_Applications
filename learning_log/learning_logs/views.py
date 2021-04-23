@@ -53,6 +53,7 @@ def new_topic(request):
 def new_entry(request, topic_id):
     """ Add a new entry to a topic. """
     topic = Topic.objects.get(id=topic_id)
+    check_topic_owner(topic.user, request)
 
     if request.method != 'POST':
         # No data submitted create a blank form
@@ -75,7 +76,9 @@ def edit_entry(request, entry_id):
     """ Edit an existing topic. """
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
-    check_topic_owner(topic.owner, request)
+    # If user tries to add entry to other users logs
+    if topic.owner != request.user:
+        return HttpResponseRedirect(reverse('learning_logs:topics'))
 
     if request.method != 'POST':
         # Initial request; pre-fill form with current entry
