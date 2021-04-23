@@ -21,5 +21,5 @@ urlpatterns = [
     # Blog
     path('', include('blogs.urls')),
     # Users
-    path('', include('users.urls')),
+    path('users/', include('users.urls')),
 ]

@@ -25,7 +25,7 @@
                     <a class="greetings">Hello, {{ user.username }}</a>
                 </li>
                 <li>
-                    <a href="{% url 'users:logout' %}">log out</a>
+                    <a href="{% url 'users:logout' %}" class="logout">log out</a>
                 </li>
             {% else %}
                 <li>

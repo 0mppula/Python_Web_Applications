@@ -15,6 +15,8 @@ def logout_view(request):
 
 def register(request):
     """ Register a new user. """
+    
+    logout(request)
     if request.method != 'POST':
         # Display blank registeration form
         form = UserCreateForm()

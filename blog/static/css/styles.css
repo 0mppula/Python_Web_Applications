@@ -14,6 +14,8 @@
     --titleFont: 'Yeseva One', cursive;
     --mainFont: 'Bitter', serif;
     --mainBorderBottom: solid 1px rgba(27, 27, 27, 0.25);
+    --mainBoxShadow: 0px 1px 13px 0px #989b97;
+    --clrDanger: #D92122;
 }
 
 body {
@@ -68,13 +70,19 @@ textarea {
     font-size: 1.2rem;
     font-family: var(--mainFont);
     margin-top: 1rem;
+    padding: 0 0.125rem;
 }
 /* End Form styles */
 
 /* Navbar styles */
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
     font-family: var(--titleFont);
+    box-shadow: var(--mainBoxShadow);
     background: #ababab;
+    background: #989b97;
     padding: 0.35rem 1rem;
     margin-bottom: 2rem;
     display: flex;
@@ -92,7 +100,7 @@ textarea {
 .nav-logins {
     display: flex;
     justify-content: space-around;
-    width: min(395px, 60%);
+    width: min(395px, 75%);
 }
 
 .nav-links li a,
@@ -110,19 +118,21 @@ textarea {
 }
 
 .nav-logins .greetings {
+    text-transform: capitalize;
     color: aquamarine;
 }
 /* End Navbar styles */
 
 /* Container styles */
 .container {
+    margin: 0 auto;
+    margin-top: 3.5rem;
     display: flex;
     flex-direction: column;
     min-height: 500px;
     width: min(750px, 95vw);
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
 }
 /* End Container styles */
 
@@ -173,9 +183,13 @@ textarea {
 
 .blog-header-right {
     display: flex;
-    width: 90%;
+    width: 100%;
     justify-content: space-between;
     align-items: flex-end;
+}
+
+.hide-icons {
+    display: none;
 }
 
 .blog-header-left {
@@ -199,6 +213,10 @@ textarea {
 .blog-header-left i:hover {
     color: aquamarine;
     filter: opacity(1);
+}
+
+.blog-header-left .delete:hover {
+    color: var(--clrDanger);
 }
 
 .blog-timestamp {

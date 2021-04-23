@@ -18,10 +18,12 @@
                     <p class="blog-timestamp">{{ blog_post.date_added }}</p>
                 </div>
 
-                <div class="blog-header-left">
-                    <a href="{% url 'blogs:edit_blog' blog_post.id %}"><i class="fas fa-pencil-alt edit"></i></a>
-                    <a href="{% url 'blogs:delete_blog' blog_post.id %}"><i class="fas fa-trash delete"></i></a>
-                </div>
+                {% if request.user == blog_post.owner %}
+                    <div class="blog-header-left">
+                            <a href="{% url 'blogs:edit_blog' blog_post.id %}"><i class="fas fa-pencil-alt edit"></i></a>
+                            <a href="{% url 'blogs:delete_blog' blog_post.id %}"><i class="fas fa-trash delete"></i></a>
+                    </div>
+                {% endif %}
             </div>
             
             <div class="blog-item-text">
