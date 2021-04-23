@@ -2,17 +2,16 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth import logout, login, authenticate
+from django.contrib.auth.forms import AuthenticationForm
 
 from .forms import UserCreateForm
+
 
 def logout_view(request):
     """ Logout user. """
     logout(request)
     return HttpResponseRedirect(reverse('blogs:index'))
 
-def login_view(request):
-    """ Logout user. """
-    return HttpResponseRedirect(reverse('blogs:index'))
 
 def register(request):
     """ Register a new user. """
