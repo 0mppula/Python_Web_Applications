@@ -59,12 +59,13 @@ form p {
 .nav-bar {
 	width: 100%;
 	height: 3.5rem;
+	position: fixed;
+	top: 0;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	color: var(--mainBlack);
 	background: var(--mainWhite);
-	position: fixed;
 	user-select: none;
 	box-shadow: var(--mainBoxShadow);
 }
@@ -146,8 +147,9 @@ form p {
 /* Content */
 .container {
 	width: min(1140px, 100%);
-	height: 90vh;
+	height: calc(100vh - 3.5rem);
 	margin: 0 auto;
+	margin-top: 3.5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
