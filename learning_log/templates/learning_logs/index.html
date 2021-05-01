@@ -1,10 +1,24 @@
 {% extends 'base.html' %}
 
 {% block title %} Home {% endblock title %}
-{% block content %}
 
-    <div class="content-card">
-        <p>Learning Log helps you keep track of your learning, for any topic you're learning about.</p>
+{% block header %}
+        <div class="container-fluid py-1">
+            <h1 class="d-flex align-items-center text-dark text-decoration-none">Track your learning.</h1>
+        </div>
+{% endblock header %}
+
+{% block content %}
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-1">
+            <h3 class="mb-3">
+                <a href="{% url 'users:register' %}">Register an account</a> to make
+                your own Learning Log, and list the topics you're learning about.
+            </h3>
+            <h3>
+                Whenever you learn something new about a topic, make an entry
+                summarizing what you've learned.
+            </h3>
+        </div>
     </div>
-    
 {% endblock content %}

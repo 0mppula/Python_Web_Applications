@@ -2,6 +2,10 @@
     padding: 0.25rem;
 }
 
+.container {
+    max-width: 1140px !important;
+}
+
 .navbar-toggler {
     font-size: 0.85rem;
     padding: 0.25rem;

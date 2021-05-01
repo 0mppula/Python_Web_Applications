@@ -1,24 +1,21 @@
 {% extends 'base.html' %}
+{% load bootstrap5 %} 
 
 {% block title %}Login{% endblock title %}
+
+{% block header %}
+    <h2>Login in to your account.</h2>
+{% endblock header %}
+
 {% block content %}
-
-
-    <div class="content-card">
-        
-        {% if form.errors %}
-        <p>Your username and password didn't match. Please try again.</p>
-        {% endif %}
-
-        <form action="{% url 'users:login' %}" method="post" class="login-form">
+        <form action="{% url 'users:login' %}" method="post" class="form">
             {% csrf_token %}
-            {{ form.as_p }}
+            {% bootstrap_form form %}
+
+            {% buttons %}
+                <button class="btn btn-primary" name="submit">log in</button>
+            {% endbuttons %}
             
-            <div class="btn-container">
-                <button class="login-btn btn" name="submit">log in</button>
-            </div>
             <input type="hidden" name="next" value="{% url 'learning_logs:index' %}">
         </form>
-    </div>
-        
 {% endblock content %}
