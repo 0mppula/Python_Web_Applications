@@ -8,14 +8,14 @@
 {% endblock header %}
 
 {% block content %}
-        <form action="{% url 'users:login' %}" method="post" class="form">
-            {% csrf_token %}
-            {% bootstrap_form form %}
+    <form action="{% url 'users:login' %}" method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
 
-            {% buttons %}
-                <button class="btn btn-primary" name="submit">log in</button>
-            {% endbuttons %}
-            
-            <input type="hidden" name="next" value="{% url 'learning_logs:index' %}">
-        </form>
+        {% buttons %}
+            <button class="btn btn-primary" name="submit">log in</button>
+        {% endbuttons %}
+        
+        <input type="hidden" name="next" value="{% url 'learning_logs:index' %}">
+    </form>
 {% endblock content %}

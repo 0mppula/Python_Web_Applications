@@ -1,33 +1,33 @@
 {% extends 'base.html' %}
 
 {% block title %} {{ topic }} {% endblock title %}
+
+{% block header %}
+    <h2>{{ topic }}</h2>
+{% endblock header %}
+
 {% block content %}
+<a class="btn btn-success mb-2" type="button" href="{% url 'learning_logs:new_entry' topic.id %}">
+    Add a new entry:
+</a>
 
-    <div class="content-card">
+    {% for entry in entries %}
+        <div class="card card-primary bg-dark text-light mb-2">
+            <div class="card-title d-flex justify-content-between align-items-center p-1 border-bottom border-light">
+                <h4 class="panel-title m-0">
+                    {{ entry.date_added|date:'M d, Y H:i' }}
+                </h4>
 
-        <div class="title">
-            <h1>Topic: {{ topic }}</h1>
+                <a href="{% url 'learning_logs:edit_entry' entry.id %}" class="btn btn-warning btn-sm">edit entry</a>
+            </div>
+
+            <div class="card-body">
+                <p class="card-text">{{ entry.text }}</p>
+            </div>
         </div>
-        
-        <div class="secondary-title">
-            <h3>Entries:</h3>
-        </div>
-        
-        <ul class="entries-list">
-            {% for entry in entries %}
-            <li>
-                <p class="timestamp">{{  entry.date_added|date:'M d, Y H:i'  }}</p>
-                <p class="entry-item">{{  entry.text  }}</p>
-                <a href="{% url 'learning_logs:edit_entry' entry.id %}" class="edit-btn btn">edit entry</a>
-            </li>
-            {% empty %}
-            <li>
-                <p class="entry-item empty">There are no entries for this topic yet.</p>
-            </li>
-            {% endfor %}
-        </ul>
 
-            <a class="add-btn btn" type="button" href="{% url 'learning_logs:new_entry' topic.id %}">Add a new entry:</a>
-    </div>
-        
-        {% endblock %}
+        {% empty %}
+            <p class="entry-item empty">There are no entries for this topic yet.</p>
+        {% endfor %}
+            
+{% endblock content %}

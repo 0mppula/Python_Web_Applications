@@ -6,6 +6,11 @@
     max-width: 1140px !important;
 }
 
+.btn-sm {
+    padding: 0.1rem 0.5rem;
+    /* text-transform: capitalize; */
+}
+
 .navbar-toggler {
     font-size: 0.85rem;
     padding: 0.25rem;
