@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
+{% load bootstrap5 %} 
 
 {% block title %}Register{% endblock title %}
-{% block content %}
 
-    <div class="content-card">
-        
-        <form action="{% url 'users:register' %}" method="post">
+{% block header %}
+    <h2>Create a new account.</h2>
+{% endblock header %}
+
+{% block content %}
+        <form class="from" action="{% url 'users:register' %}" method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            {% bootstrap_form form %}
             
-            <div class="btn-container">
-                <button name="submit" class="btn login-btn">register</button>
-            </div>
+            {% buttons %}
+                <button name="submit" class="btn btn btn-success">register</button>
+            {% endbuttons %}
+            
             <input type="hidden" name="next" value="{% url 'learning_logs:index' %}">
         </form>
-    </div>
-
 {% endblock content %}
