@@ -35,27 +35,30 @@ def new_blog(request):
 def edit_blog(request, blog_id):
     """ Edit a particular blogs title and text. """
     blog_post = BlogPost.objects.get(id=blog_id)
-    check_user_rights(request, blog_post)
 
-    if request.method != 'POST':
-        # Initial request; pre-fill form with current blog info
-        form = BlogPostForm(instance=blog_post)
+    if check_user_rights(request, blog_post):
+        if request.method != 'POST':
+            # Initial request; pre-fill form with current blog info
+            form = BlogPostForm(instance=blog_post)
+        else:
+            # POST data submitted; process data
+            form = BlogPostForm(instance=blog_post, data=request.POST)
+            if form.is_valid():
+                form.save()
+                return HttpResponseRedirect(reverse('blogs:index'))
+        
+        context = {'blog_post': blog_post, 'form': form}
+        return render(request, 'blogs/edit_blog.html', context)
     else:
-        # POST data submitted; process data
-        form = BlogPostForm(instance=blog_post, data=request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(reverse('blogs:index'))
-    
-    context = {'blog_post': blog_post, 'form': form}
-    return render(request, 'blogs/edit_blog.html', context)
+        return HttpResponseRedirect(reverse('blogs:index'))
 
 
 def delete_blog(request, blog_id):
     """ Deletes selected blog from website. """
     blog_post = BlogPost.objects.get(id=blog_id)
-    check_user_rights(request, blog_post)
-    blog_post.delete()
+
+    if check_user_rights(request, blog_post):
+        blog_post.delete()
 
     return HttpResponseRedirect(reverse('blogs:index'))
 
@@ -64,7 +67,7 @@ def check_user_rights(request, blog_post):
     """ Checks if user is a superuser or the owner of blog post.  """
     if blog_post.owner != request.user:
         if request.user.is_superuser:
-            pass
+            return True
         else:
-            return HttpResponseRedirect(reverse('blogs:index'))
+            return False
 
