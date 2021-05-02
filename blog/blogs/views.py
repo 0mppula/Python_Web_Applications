@@ -35,8 +35,7 @@ def new_blog(request):
 def edit_blog(request, blog_id):
     """ Edit a particular blogs title and text. """
     blog_post = BlogPost.objects.get(id=blog_id)
-    if blog_post.owner != request.user:
-        return HttpResponseRedirect(reverse('blogs:index'))
+    check_user_rights(request, blog_post)
 
     if request.method != 'POST':
         # Initial request; pre-fill form with current blog info
@@ -55,10 +54,17 @@ def edit_blog(request, blog_id):
 def delete_blog(request, blog_id):
     """ Deletes selected blog from website. """
     blog_post = BlogPost.objects.get(id=blog_id)
+    check_user_rights(request, blog_post)
     blog_post.delete()
-    
-    if blog_post.owner != request.user:
-        return HttpResponseRedirect(reverse('blogs:index'))
 
     return HttpResponseRedirect(reverse('blogs:index'))
+
+
+def check_user_rights(request, blog_post):
+    """ Checks if user is a superuser or the owner of blog post.  """
+    if blog_post.owner != request.user:
+        if request.user.is_superuser:
+            pass
+        else:
+            return HttpResponseRedirect(reverse('blogs:index'))
 

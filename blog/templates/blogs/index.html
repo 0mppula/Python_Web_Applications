@@ -18,7 +18,7 @@
                     <p class="blog-timestamp">{{ blog_post.date_added }}</p>
                 </div>
 
-                {% if request.user == blog_post.owner %}
+                {% if request.user == blog_post.owner or user.is_superuser %}
                     <div class="blog-header-left">
                             <a href="{% url 'blogs:edit_blog' blog_post.id %}"><i class="fas fa-pencil-alt edit"></i></a>
                             <a href="{% url 'blogs:delete_blog' blog_post.id %}"><i class="fas fa-trash delete"></i></a>
