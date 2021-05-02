@@ -14,14 +14,16 @@
     </h3>
 
     {% for topic in topics %}
-        <div class="card card-primary bg-dark text-light mb-2 ps-2">
-                <div class="card-title d-flex justify-content-between align-items-center p-1 mb-0 border-bottom border-light">
-                    <h3 class="mb-0">
-                        <a class="text-decoration-none" href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
-                    </h3>
-                </div>
-        </div>
-
+    <div class="card card-primary bg-dark text-light mb-2 ps-2">
+        <a class="text-decoration-none text-light topic" href="{% url 'learning_logs:topic' topic.id %}">
+            <div class="card-title d-flex justify-content-between align-items-center p-1 mb-0 border-light">
+                <h3 class="mb-0">
+                    {{ topic }}
+                </h3>
+            </div>
+        </a>
+    </div>
+            
     {% empty %}
         <p>No topics have been added yet.</p>
     {% endfor %}
