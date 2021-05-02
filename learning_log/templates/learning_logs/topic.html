@@ -15,7 +15,7 @@
         <div class="card card-primary bg-dark text-light mb-2">
             <div class="card-title d-flex justify-content-between align-items-center p-1 border-bottom border-light">
                 <h4 class="panel-title m-0">
-                    {{ entry.date_added|date:'M d, Y H:i' }}
+                    {{ entry.date_added|date:'M d, Y H:i:s' }}
                 </h4>
 
                 <a href="{% url 'learning_logs:edit_entry' entry.id %}" class="btn btn-warning btn-sm">edit entry</a>
