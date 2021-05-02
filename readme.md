@@ -21,7 +21,7 @@
 
 ### Chapter 20 - Styling and Deploying an App
 
--   [ ] 20-1. Other Forms
+-   [x] 20-1. Other Forms
 -   [ ] 20-2. Stylish Blog
 -   [ ] 20-3. Live Blog
 -   [ ] 20-4. More 404s
