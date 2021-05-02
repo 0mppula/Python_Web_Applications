@@ -21,6 +21,10 @@
 body {
 	font-family: var(--mainFont);
 }
+
+::selection {
+	background-color: aquamarine;
+}
 /* End Master styles */
 
 /* Form styles */
@@ -88,6 +92,7 @@ textarea {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	user-select: none;
 }
 
 .nav-links,
@@ -142,6 +147,7 @@ textarea {
 	font-size: 1.75rem;
 	text-transform: capitalize;
 	margin-bottom: 5rem;
+	user-select: none;
 }
 
 .title-container-small {
@@ -150,6 +156,7 @@ textarea {
 	font-size: 1.5rem;
 	text-transform: capitalize;
 	margin-bottom: 5rem;
+	user-select: none;
 }
 /* End Title Styles */
 
@@ -185,6 +192,7 @@ textarea {
 	width: 100%;
 	justify-content: space-between;
 	align-items: flex-end;
+	text-transform: capitalize;
 }
 
 .hide-icons {
