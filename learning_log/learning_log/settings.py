@@ -152,9 +152,4 @@ if os.getcwd() == '/app':
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = False
 
-    # Static asset configuration
-    # STATIC_ROOT = 'staticfiles'
-    # STATICFILES_DIRS = (
-    # os.path.join(BASE_DIR, 'static'),
-    # )
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
