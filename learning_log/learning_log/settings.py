@@ -118,17 +118,17 @@ USE_L10N = True
 USE_TZ = True
 
 
+# My settings
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = 'learning_log/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = 'learning_log/'
 STATICFILE_DIRS = [ 
-      "static/css", 
-      "server/staticfiles",
+    #   'static/css', 
+      'server/staticfiles/',
 ]
 
-# My settings
 LOGIN_URL = '/users/login/'
 
 # Settings for django-bootstrap5
