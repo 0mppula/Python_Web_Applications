@@ -27,8 +27,8 @@ SECRET_KEY = 'dza$4m)=%z^)m@a!=e93t$1c$e6h3v(1$x$-=w^h)q_msingc+'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-# Application definition
 
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -121,9 +121,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = 'learning_log/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILE_DIRS = [ 
+      "static/css", 
+      "staticfiles",
 ]
 
 # My settings
@@ -134,24 +136,25 @@ BOOTSTRAP5 = {
     'include_jquery': True,
 }
 
-# # Heroku settings
-# import dj_database_url
-# DATABASES = {
-#     'default': dj_database_url.config(default='postgres://localhost')
-# }
+# Heroku settings
+if os.getcwd() == '/app':
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(default='postgres://localhost')
+    }
 
-# # Honor the 'X-Forwarded-Proto' header for request.is_secure()
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    # Honor the 'X-Forwarded-Proto' header for request.is_secure()
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# # Allow only Heroku to host the project
-# ALLOWED_HOSTS = ['pycc-learning-log-app.herokuapp.com']
+    # Allow only Heroku to host the project
+    ALLOWED_HOSTS = ['pycc-learning-log-app.herokuapp.com']
 
-# # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = False
 
-# # Static asset configuration
-# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# STATIC_ROOT = 'staticfiles'
-# STATICFILES_DIRS = (
-# os.path.join(BASE_DIR, 'static'),
-# )
+    # Static asset configuration
+    # STATIC_ROOT = 'staticfiles'
+    # STATICFILES_DIRS = (
+    # os.path.join(BASE_DIR, 'static'),
+    # )
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
