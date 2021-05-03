@@ -26,10 +26,7 @@ SECRET_KEY = 'dza$4m)=%z^)m@a!=e93t$1c$e6h3v(1$x$-=w^h)q_msingc+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# If debug is false
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-
-
+ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
@@ -137,21 +134,24 @@ BOOTSTRAP5 = {
     'include_jquery': True,
 }
 
-# Heroku settings
-import dj_database_url
-DATABASES = {
-    'default': dj_database_url.config(default='postgres://localhost')
-}
+# # Heroku settings
+# import dj_database_url
+# DATABASES = {
+#     'default': dj_database_url.config(default='postgres://localhost')
+# }
 
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# # Honor the 'X-Forwarded-Proto' header for request.is_secure()
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# Allow all host headers
-ALLOWED_HOSTS = ['*']
+# # Allow only Heroku to host the project
+# ALLOWED_HOSTS = ['pycc-learning-log-app.herokuapp.com']
 
-# Static asset configuration
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
-STATICFILES_DIRS = (
-os.path.join(BASE_DIR, 'static'),
-)
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = False
+
+# # Static asset configuration
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# STATIC_ROOT = 'staticfiles'
+# STATICFILES_DIRS = (
+# os.path.join(BASE_DIR, 'static'),
+# )
