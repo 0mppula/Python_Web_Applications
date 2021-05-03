@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILE_DIRS = [ 
       "static/css", 
-      "staticfiles",
+      "server/staticfiles",
 ]
 
 # My settings
