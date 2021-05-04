@@ -1,3 +1,4 @@
 *.pyc
 ll_env/
 *.sqlite3
+/*.txt
