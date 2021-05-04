@@ -124,9 +124,8 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'server/static')
 STATIC_URL = 'learning_log/'
-STATICFILE_DIRS = [ 
-    #   'static/css', 
-    #   'server/staticfiles/',
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
 ]
 
 LOGIN_URL = '/users/login/'
