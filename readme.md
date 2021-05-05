@@ -23,6 +23,6 @@
 
 -   [x] 20-1. Other Forms
 -   [x] 20-2. Stylish Blog (custom styles without Bootstrap v5.0)
--   [ ] 20-3. Live Blog
+-   [x] 20-3. Live Blog
 -   [x] 20-4. More 404s
 -   [ ] 20-5. Extended Learning Log
