@@ -76,6 +76,10 @@ textarea {
 	margin-top: 1rem;
 	padding: 0 0.125rem;
 }
+
+.center-text {
+	text-align: center;
+}
 /* End Form styles */
 
 /* Navbar styles */
