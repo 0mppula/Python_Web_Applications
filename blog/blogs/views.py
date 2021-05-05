@@ -36,6 +36,7 @@ def edit_blog(request, blog_id):
     """ Edit a particular blogs title and text. """
     blog_post = get_object_or_404(BlogPost, id=blog_id)
 
+    print(check_user_rights(request, blog_post))
     if check_user_rights(request, blog_post):
         if request.method != 'POST':
             # Initial request; pre-fill form with current blog info
@@ -65,9 +66,10 @@ def delete_blog(request, blog_id):
 
 def check_user_rights(request, blog_post):
     """ Checks if user is a superuser or the owner of blog post.  """
-    if blog_post.owner != request.user:
-        if request.user.is_superuser:
-            return True
-        else:
-            return False
+    if request.user == blog_post.owner:
+        return True
+    elif request.user.is_superuser:
+        return True
+    else:
+        return False
 
