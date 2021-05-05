@@ -14,7 +14,7 @@
 	--titleFont: 'Yeseva One', cursive;
 	--mainFont: 'Bitter', serif;
 	--mainBorderBottom: solid 1px rgba(27, 27, 27, 0.25);
-	--mainBoxShadow: 0px 1px 13px 0px #989b97;
+	--mainBoxShadow: 0px 1px 13px 0px rgba(27, 27, 27, 0.25);;
 	--clrDanger: #d92122;
 }
 
@@ -87,16 +87,17 @@ textarea {
 	position: fixed;
 	top: 0;
 	width: 100%;
+	height: 3.25rem;
 	font-family: var(--titleFont);
 	box-shadow: var(--mainBoxShadow);
 	background: #ababab;
 	background: #989b97;
 	padding: 0.35rem 1rem;
-	margin-bottom: 2rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	user-select: none;
+	z-index: 10;
 }
 
 .nav-links,
@@ -134,10 +135,10 @@ textarea {
 /* Container styles */
 .container {
 	margin: 0 auto;
-	margin-top: 3.5rem;
+	margin-top: 3.25rem;
 	display: flex;
 	flex-direction: column;
-	min-height: 500px;
+	min-height: 50vh;
 	width: min(750px, 95vw);
 	align-items: center;
 	justify-content: center;
@@ -150,7 +151,7 @@ textarea {
 	color: #1b1b1b;
 	font-size: 1.75rem;
 	text-transform: capitalize;
-	margin-bottom: 5rem;
+	margin: 2rem 0 3rem;
 	user-select: none;
 }
 
@@ -211,14 +212,14 @@ textarea {
 
 .blog-header-left i {
 	font-size: 1.1rem;
-	padding: 0 0 0.1rem 0.5rem;
 	filter: opacity(0.75);
 	transition: 0.2s ease;
 	cursor: pointer;
+	color: #1b1b1b;
 }
 
-.blog-header-left a i {
-	color: #1b1b1b;
+.blog-header-left a {
+	padding: 0 0.25rem 0rem 0.25rem;
 }
 
 .blog-header-left i:hover {
@@ -242,7 +243,8 @@ textarea {
 }
 
 .blog-items-footer {
-	margin: 1rem 0;
+	width: 100%;
+	margin: 0 0 5rem;
 	display: flex;
 	justify-content: center;
 }
@@ -301,6 +303,19 @@ textarea {
 		box-sizing: border-box;
 		max-width: 95vw;
 	}
+	.navbar {
+		height: 3.25rem;
+		padding: 0.35rem;
+		justify-content: space-between;
+	}
+	.nav-links,
+	.nav-logins {
+		padding: 0.35rem;
+	}
+	.nav-links li a,
+	.nav-logins li a {
+		font-size: 1.15rem;
+	}
 	.title-container {
 		font-size: 1.35rem;
 		margin-bottom: 4rem;
@@ -315,12 +330,12 @@ textarea {
 	.blog-timestamp {
 		font-size: 0.75rem;
 	}
+	.blog-header-left {
+		display: flex;
+		flex-direction: column;
+	}
 	.blog-header-left i {
 		font-size: 1rem;
-		padding: 0 0 0.1rem 0.5rem;
-		filter: opacity(0.75);
-		transition: 0.2s ease;
-		cursor: pointer;
 	}
 	.blog-item-text {
 		width: 100%;
