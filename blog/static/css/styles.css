@@ -80,6 +80,13 @@ textarea {
 .center-text {
 	text-align: center;
 }
+
+.empty {
+	height: 15vh;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* End Form styles */
 
 /* Navbar styles */
@@ -308,6 +315,15 @@ textarea {
 		padding: 0.35rem;
 		justify-content: space-between;
 	}
+	.nav-logins {
+		justify-content: flex-end;
+	}
+	.nav-logins > li {
+		padding: 0 0.75rem;
+	}
+	.nav-logins  li:last-child {
+		padding: 0 0.35rem 0 0.75rem;
+	}
 	.nav-links,
 	.nav-logins {
 		padding: 0.35rem;
@@ -330,10 +346,6 @@ textarea {
 	.blog-timestamp {
 		font-size: 0.75rem;
 	}
-	.blog-header-left {
-		display: flex;
-		flex-direction: column;
-	}
 	.blog-header-left i {
 		font-size: 1rem;
 	}
@@ -343,7 +355,7 @@ textarea {
 	}
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 450px) {
 	.title-container {
 		font-size: 1.23rem;
 	}
@@ -357,6 +369,8 @@ textarea {
 		align-items: flex-start;
 	}
 	.blog-header-left {
+		display: flex;
+		flex-direction: column;
 		min-height: 45px;
 		align-items: center;
 	}
