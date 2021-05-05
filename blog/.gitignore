@@ -1,0 +1,3 @@
+*.pyc
+ll_env/
+*.sqlite3
