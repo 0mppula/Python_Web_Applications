@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect, Http404
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
@@ -34,7 +34,7 @@ def new_blog(request):
 
 def edit_blog(request, blog_id):
     """ Edit a particular blogs title and text. """
-    blog_post = BlogPost.objects.get(id=blog_id)
+    blog_post = get_object_or_404(BlogPost, id=blog_id)
 
     if check_user_rights(request, blog_post):
         if request.method != 'POST':
@@ -55,7 +55,7 @@ def edit_blog(request, blog_id):
 
 def delete_blog(request, blog_id):
     """ Deletes selected blog from website. """
-    blog_post = BlogPost.objects.get(id=blog_id)
+    blog_post = get_object_or_404(BlogPost, id=blog_id)
 
     if check_user_rights(request, blog_post):
         blog_post.delete()
