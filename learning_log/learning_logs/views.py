@@ -15,7 +15,14 @@ def index(request):
 @login_required
 def topics(request):
     """ Displays all topics. """
-    topics = Topic.objects.filter(owner=request.user).order_by('date_added')
+
+    if request.user.is_superuser:
+        topics = Topic.objects.all().order_by('date_added')
+    else:
+        owned_topics = Topic.objects.filter(owner=request.user)
+        public_topics = Topic.objects.filter(public=True)
+        topics = owned_topics.union(public_topics).order_by('date_added')
+        
     context = {'topics': topics}
     return render(request, 'learning_logs/topics.html', context)
 
@@ -23,11 +30,14 @@ def topics(request):
 def topic(request, topic_id):
     """ Display a single topic and all its entries. """
     topic = get_object_or_404(Topic, id=topic_id)
+
     # Confirm topic ownership before displaying
-    check_topic_owner(topic.owner, request)
-    entries = topic.entry_set.order_by('-date_added')
-    context = {'topic': topic, 'entries': entries}
-    return render(request, 'learning_logs/topic.html', context)
+    if check_user_rights(request, topic.owner):
+        entries = topic.entry_set.order_by('-date_added')
+        context = {'topic': topic, 'entries': entries}
+        return render(request, 'learning_logs/topic.html', context)
+    else:
+        raise Http404
 
 
 @login_required
@@ -53,22 +63,24 @@ def new_topic(request):
 def new_entry(request, topic_id):
     """ Add a new entry to a topic. """
     topic = get_object_or_404(Topic, id=topic_id)
-    check_topic_owner(topic.owner, request)
 
-    if request.method != 'POST':
-        # No data submitted create a blank form
-        form = EntryForm()
-    else:
-        # POST data submitted; process data
-        form = EntryForm(request.POST)
-        if form.is_valid():
-            new_entry = form.save(commit=False)
-            new_entry.topic = topic
-            form.save()
-            return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic_id]))
+    if check_user_rights(request, topic.owner):
+        if request.method != 'POST':
+            # No data submitted create a blank form
+            form = EntryForm()
+        else:
+            # POST data submitted; process data
+            form = EntryForm(request.POST)
+            if form.is_valid():
+                new_entry = form.save(commit=False)
+                new_entry.topic = topic
+                form.save()
+                return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic_id]))
     
-    context = {'topic': topic, 'form': form}
-    return render(request, 'learning_logs/new_entry.html', context)
+        context = {'topic': topic, 'form': form}
+        return render(request, 'learning_logs/new_entry.html', context)
+    else:
+        raise Http404
 
 
 @login_required
@@ -76,8 +88,11 @@ def edit_entry(request, entry_id):
     """ Edit an existing topic. """
     entry = get_object_or_404(Entry, id=entry_id)
     topic = entry.topic
+
     # If user tries to add entry to other users logs
-    if topic.owner != request.user:
+    if check_user_rights(request, topic.owner):
+        pass
+    else:
         return HttpResponseRedirect(reverse('learning_logs:topics'))
 
     if request.method != 'POST':
@@ -93,7 +108,11 @@ def edit_entry(request, entry_id):
     context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request, 'learning_logs/edit_entry.html', context)
 
-def check_topic_owner(owner, request):
-    """ Check if user owns a topic. """
-    if owner != request.user:
-        raise Http404
+def check_user_rights(request, owner):
+    """ Check if user owns a topic or is a super user. """
+    if request.user == owner:
+        return True
+    elif request.user.is_superuser:
+        return True
+    else:
+        return False
