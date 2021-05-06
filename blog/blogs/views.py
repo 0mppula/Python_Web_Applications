@@ -36,7 +36,6 @@ def edit_blog(request, blog_id):
     """ Edit a particular blogs title and text. """
     blog_post = get_object_or_404(BlogPost, id=blog_id)
 
-    print(check_user_rights(request, blog_post))
     if check_user_rights(request, blog_post):
         if request.method != 'POST':
             # Initial request; pre-fill form with current blog info
